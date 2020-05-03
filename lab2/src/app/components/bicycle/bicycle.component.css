@@ -1,0 +1,85 @@
+.main-container{
+  margin-top: 35px;
+  margin-left: 50px;
+  max-width: 95%;
+}
+
+.logo{
+  width: 73vw;
+}
+
+.cart-content{
+  margin-top: 10px;
+  max-width: 15vw;
+}
+
+.cart{
+  max-width: 15vw;
+}
+
+.cart-btn{
+  font-size: x-large;
+}
+
+h2{
+  margin-bottom: 35px;
+}
+
+.bike-img{
+  border-radius: 50%;
+  height: 100px;
+  margin: 10px;
+}
+
+.bike-name{
+  padding-top: 40px;
+  margin-left: 40px;
+  width: 25vw;
+}
+
+.bike-price{
+  margin-top: 40px;
+  width: 15vw;
+}
+
+.bike-number{
+  margin-top: 40px;
+  height: 40px;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.bike-btn{
+  height: 40px;
+  width: 40px;
+  margin-top: 12px;
+  margin-right: 10px;
+  display: block;
+}
+
+li{
+  width: 70vw;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.object{
+  width: 66vw;
+}
+
+.border {
+  border-width:3px !important;
+}
+
+.add-bike-btn{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: x-large;
+}
+
+label{
+  width: 200px;
+}
+
+
+

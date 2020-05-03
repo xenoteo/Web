@@ -1,0 +1,21 @@
+form{
+  max-width: 90%;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.form-row{
+  padding: 5px;
+}
+
+label{
+  width: 13vw;
+}
+
+input{
+  width: 35vw;
+}
+
+.my-btn{
+  width: 35vw;
+}

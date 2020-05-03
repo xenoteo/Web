@@ -1,0 +1,20 @@
+<form>
+  <div class="form-row">
+    <label class="text-light">First name:
+      <input type=text [formControl]="firstName" title="Enter actor's first name" placeholder="Edward">
+    </label>
+  </div>
+  <div class="form-row">
+    <label class="text-light">Last name:
+      <input [formControl]="lastName" title="Enter actor's last name" placeholder="Norton">
+    </label>
+  </div>
+  <div class="form-row">
+    <label class="text-light">Movie title:
+      <input [formControl]="movieTitle" title="Enter movie title" placeholder="Motherless Brooklyn">
+    </label>
+  </div>
+  <div class="form-row">
+    <button class="my-btn btn btn-warning" (click)="submit()">Submit</button>
+  </div>
+</form>

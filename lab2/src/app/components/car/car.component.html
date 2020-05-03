@@ -1,0 +1,40 @@
+<div class="cars-container text-light">
+  <h2>Available cars</h2>
+  <div class="brand">
+    <label for="brand">
+      Choose the brand:
+    </label>
+    <select id="brand" name="brand">
+      <option value="merc" (click)="filterBrand('Mercedes')">Mercedes</option>
+      <option value="audi" (click)="filterBrand('Audi')">Audi</option>
+      <option value="bmw" (click)="filterBrand('BMW')">BMW</option>
+    </select>
+    <ul class="cars">
+      <li *ngFor="let car of filteredCars">
+        <span class="badge">{{car.brand}} {{car.model}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="model" *ngIf="isBrandChosen">
+    <label for="model">
+      Choose the model:
+    </label>
+    <select id="model" name="model">
+      <option *ngFor="let car of filteredCars" (click)="chooseModel(car.model)"> {{car.model}} </option>
+    </select>
+  </div>
+  <div class="color" *ngIf="isModelChosen">
+    <label for="color">
+      Choose the color:
+    </label>
+    <select id="color" name="color">
+      <option *ngFor="let color of chosenModel.colors" (click)="chooseColor(color)"> {{color}} </option>
+    </select>
+  </div>
+  <div class="data" *ngIf="isColorChosen">
+    <h3>
+      Your chosen car is {{chosenColor}} {{chosenModel.brand}} {{chosenModel.model}}
+    </h3>
+  </div>
+</div>
+

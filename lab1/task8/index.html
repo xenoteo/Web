@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+<body onload="update()">
+    <ul class="user-list" id="users">
+
+    </ul>
+
+    <form class="form d-none" id="new-cat">
+        <div class="form-row">
+            <label for="cat-name">Cat name</label>
+            <input type="text" name="cat-name" id="cat-name-2">
+        </div>
+        <div class="form-row">
+            <label for="cat-photo">Src for cat's image</label>
+            <input type="text" name="cat-photo" id="cat-photo-2">
+        </div>
+        <div class="form-row">
+            <button type="submit" class="btn" onclick="addCat()">Add new cat</button>
+        </div>
+    </form>
+    <form class="form">
+        <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" pattern="[A-Za-z ]{1,32}" title="Enter your real name">
+        </div>
+        <div class="form-row">
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age">
+        </div>
+        <div class="form-row">
+            <label for="cat-name">Cat name</label>
+            <input type="text" name="cat-name" id="cat-name">
+        </div>
+        <div class="form-row">
+            <label for="cat-photo">Src for cat's image</label>
+            <input type="text" name="cat-photo" id="cat-photo">
+        </div>
+        <div class="form-row">
+            <button type="submit" class="btn" onclick="addUser()">Add new user</button>
+        </div>
+    </form>
+</body>
+</html>

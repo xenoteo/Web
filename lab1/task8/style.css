@@ -1,0 +1,134 @@
+body {
+    background: #F9FAFC;
+}
+
+.btn {
+    background: green;
+    height:3rem;
+    box-sizing: border-box;
+    border:0;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s all;
+    color:#fff;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0.5rem;
+}
+.btn:hover {
+    background: #7200da;
+}
+
+.user-list {
+    max-width:80%;
+    margin: auto;
+    list-style:none;
+    padding:0;
+}
+.user {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    background: #fff;
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    border-radius: 0.2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    width: 25%;
+}
+.user-data {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.user-delete {
+    width:3rem;
+    height:3rem;
+    text-indent:-9999px;
+    overflow: hidden;
+    font-weight: normal;
+}
+.user-delete:before {
+    text-indent: 0;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    content: '\f1f8';
+    font-family: 'FontAwesome';
+    justify-content: center;
+    align-items: center;
+    font-size:1.5rem;
+    color:#fff;
+}
+
+.form {
+    background: #fff;
+    padding:2rem;
+    display: flex;
+    margin: 2rem auto 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    width: 85%;
+
+}
+.form label {
+    display: block;
+    height:1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    margin-bottom:0.3rem;
+    color:#aaa;
+}
+.form-row {
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    padding:0 10px;
+    height:3rem;
+    border:1px solid #bbb;
+    box-sizing: border-box;
+    margin-right:10px;
+}
+.form input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px #7200DA;
+    border-color:  #7200DA;
+}
+.form .btn {
+    margin-top:1rem;
+}
+.form .btn:hover {
+    background: #7200da;
+}
+
+
+.d-none{
+    display: none;
+}
+
+img{
+    width: 90%;
+}
+
+ul.user-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-buttons{
+    display: flex;
+    justify-content: center;
+}

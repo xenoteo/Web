@@ -1,0 +1,18 @@
+.img-sea{
+    max-width: 70%;
+}
+
+.border-10{
+    border-style:solid;
+    border-width: 10px;
+    border-radius: 3%;
+}
+
+.border-red{
+    border-color: #DC143C;
+}
+
+.border-blue{
+    border-color: #4169E1;
+}
+

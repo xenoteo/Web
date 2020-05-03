@@ -1,0 +1,64 @@
+<div class="text-light main-container">
+  <nav class="d-inline-flex">
+    <div class="logo">
+      <h2>Available bicycles</h2>
+    </div>
+    <div class="cart">
+      <button class="btn btn-secondary cart-btn " (click)="changeDisplayCart()">Cart</button>
+      <div *ngIf="displayCart">
+        <ul *ngFor="let item of bikesInCart">
+          <li class="cart-content">
+            <p class="cart-content">{{item.bicycle.name}}: {{item.number}}</p>
+          </li>
+        </ul>
+        <p *ngIf="bikesInCart.length == 0" class="cart-content">The cart is empty</p>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <ul *ngFor="let bike of bicycles" class="list-group list-unstyled">
+      <li class="d-inline-flex" [ngClass]="getStyle(bike)" >
+        <!--      to check what bike names contain 'az' add to li-->
+        <!--      *ngIf="bike.name.indexOf('az') != -1"-->
+        <div class="d-inline-flex object">
+          <img class="bike-img" src={{bike.imgSrc}}>
+          <h4 class="bike-name"> {{bike.name | uppercase}} </h4>
+          <h5 class="bike-price"> ${{bike.unitPrice}}</h5>
+          <h6 class="bike-number">Units on stock: </h6>
+          <h6 class="bike-number ml-1" [ngClass]="getTextColor(bike)"> {{bike.unitsOnStock}}</h6>
+        </div>
+        <div class="d-block buttons">
+          <button class="bike-btn btn btn-success" [ngClass]="getAddButtonStyle(bike)" (click)="add(bike)">+</button>
+          <button class="bike-btn btn btn-danger" [ngClass]="getRemoveButtonStyle(bike)" (click)="remove(bike)">-</button>
+        </div>
+      </li>
+    </ul>
+    <button class="btn btn-info add-bike-btn" (click)="changeDisplayForm()">Add bicycle</button>
+    <form *ngIf="displayForm">
+      <div class="form-row">
+        <label class="text-light">Bicycle name:
+          <input type=text [formControl]="name" title="Enter bicycle name" placeholder="Stels">
+        </label>
+      </div>
+      <div class="form-row">
+        <label class="text-light">Unit price:
+          <input type=text [formControl]="unitPrice" title="Enter bicycle unit price" placeholder="123.45">
+        </label>
+      </div>
+      <div class="form-row">
+        <label class="text-light">Units on stock:
+          <input type=text [formControl]="unitsOnStock" title="Enter the number of units on stock" placeholder="12">
+        </label>
+      </div>
+      <div class="form-row">
+        <label class="text-light">Image src:
+          <input type=text [formControl]="imgSrc" title="Enter bicycle image src" placeholder="assets/img/undefined.jpg">
+        </label>
+      </div>
+      <div class="form-row">
+        <button class="my-btn btn btn-primary" (click)="submit()">Submit</button>
+      </div>
+    </form>
+  </section>
+</div>
+
