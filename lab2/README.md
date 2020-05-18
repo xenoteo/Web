@@ -8,10 +8,10 @@ To run this project you should create new project `ng new <name-of-the-project>`
 - Page about your favorite actor. Here you can input your actor's name and your favorite movie to get this info back.  
   To load this page add tag `<app-actor>` to file `src/app/app.component.html`.
   <a href="https://imgur.com/F7sOSqE"><img src="https://i.imgur.com/F7sOSqE.png" title="source: imgur.com" /></a>
-- Page is to choose the car brand, model and color depending on your previous choices.
+- Page is to choose the car brand, model and color depending on your previous choices.  
   To load this page add tag `<app-car>` to file `src/app/app.component.html`.  
   <a href="https://imgur.com/OQDTmHU"><img src="https://i.imgur.com/OQDTmHU.png" title="source: imgur.com" /></a>
-- Calculator. Implementation of simple calculator.  
+- Simple calculator.  
   To load this page add tag `<app-calculator>` to file `src/app/app.component.html`.
   <a href="https://imgur.com/3Kg01w8"><img src="https://i.imgur.com/3Kg01w8.png" title="source: imgur.com" /></a>
 - Simple internet shop selling bicycles.  
