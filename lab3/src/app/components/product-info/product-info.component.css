@@ -1,0 +1,68 @@
+.logo{
+  width: 73vw;
+}
+
+h2{
+  margin-bottom: 35px;
+}
+
+.product-img{
+  border-radius: 50%;
+  height: 100px;
+  margin: 10px;
+}
+
+.product-name{
+  padding-top: 20px;
+  margin-left: 40px;
+  width: 20vw;
+}
+
+.product-price{
+  margin-top: 40px;
+  width: 12vw;
+}
+
+.product-number{
+  height: 40px;
+  border-radius: 5px;
+  padding-top: 40px;
+  width: 7.5vw;
+}
+
+.bike-btn{
+  height: 40px;
+  width: 40px;
+  margin-top: 12px;
+  margin-right: 10px;
+  display: block;
+}
+
+.product-wrapper{
+  width: 70vw;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.border {
+  border-width:3px !important;
+}
+
+.product-param{
+  margin-left: 30px;
+}
+
+.buttons{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: auto;
+}
+
+.item-btn{
+  margin-top: 10px;
+  width: 140px;
+}
+
+
+
+

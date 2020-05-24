@@ -1,0 +1,12 @@
+<div class="text-light mt-3">
+  <ul *ngFor="let item of items">
+    <li class="cart-content d-inline-flex">
+      <p class="cart-content item mt-4">{{item.product.name}}: {{item.number}} x ${{item.product.unitPrice}}</p>
+      <button type="button" class="btn btn-danger btn-sm" (click)="deleteProduct(item.product)">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </li>
+  </ul>
+  <p>Total sum: {{sum}}</p>
+  <p *ngIf="items.length == 0" class="cart-content">The cart is empty</p>
+</div>

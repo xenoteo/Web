@@ -1,0 +1,39 @@
+<div *ngIf="isBike" class="d-inline-flex product-wrapper" [ngClass]="getStyle(bike)">
+    <div class="d-inline-flex">
+      <img class="product-img" src={{bike.imgSrc}}>
+      <div class="d-inline-block">
+        <h4 class="product-name"> {{bike.name | uppercase}} </h4>
+        <p class="product-param"> Description: {{bike.description}} </p>
+        <p class="product-param"> Frame size:  {{bike.frameSize}}'' </p>
+        <p class="product-param"> Wheel diameter:  {{bike.wheelDiameter}}''</p>
+        <p class="product-param"> Type: {{bike.type}} </p>
+      </div>
+      <h5 class="product-price"> ${{bike.unitPrice}}</h5>
+      <h6 class="product-number">Units on stock: </h6>
+      <h6 class="product-number ml-1" [ngClass]="getTextColor(bike)"> {{bike.unitsOnStock}}</h6>
+    </div>
+    <div class="d-block buttons">
+      <button class="btn btn-success item-btn" (click)="addProductToCart(bike)">Add to cart</button>
+      <button class="btn btn-danger item-btn" (click)="deleteProduct()">Remove</button>
+    </div>
+</div>
+
+<div *ngIf="!isBike" class="d-inline-flex product-wrapper" [ngClass]="getStyle(scooter)" >
+  <div class="d-inline-flex">
+    <img class="product-img" src={{scooter.imgSrc}}>
+    <div class="d-block">
+      <h4 class="product-name"> {{scooter.name | uppercase}} </h4>
+      <p class="product-param">Weight: {{scooter.weight}} kg</p>
+      <p class="product-param">Max range:  {{scooter.maxRange}} km</p>
+    </div>
+    <h5 class="product-price"> ${{scooter.unitPrice}}</h5>
+    <h6 class="product-number">Units on stock: </h6>
+    <h6 class="product-number ml-1" [ngClass]="getTextColor(scooter)"> {{scooter.unitsOnStock}}</h6>
+  </div>
+  <div class="d-block buttons">
+    <button class="btn btn-success item-btn" (click)="addProductToCart(scooter)">Add to cart</button>
+    <button class="btn btn-danger item-btn" (click)="deleteProduct()">Remove</button>
+  </div>
+</div>
+
+

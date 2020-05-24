@@ -1,0 +1,18 @@
+<div class="main-container">
+  <h1 class="text-light mb-5">Available products</h1>
+  <div *ngFor="let product of products">
+    <app-product-info [product]="product" (notify)="deleteProduct($event)"></app-product-info>
+  </div>
+  <div class="mt-3 mb-3">
+    <button class="btn btn-secondary cart-btn" (click)="changeCartDisplay()">Cart</button>
+    <div *ngIf="isCartDisplayed">
+      <app-cart></app-cart>
+    </div>
+  </div>
+  <div class="mt-2 mb-4">
+    <button *ngIf="!isFormDisplayed" class="btn btn-info" (click)="displayForm()">Add new product</button>
+    <app-new-product *ngIf="isFormDisplayed" (notify)="addProduct($event)"></app-new-product>
+  </div>
+</div>
+
+
