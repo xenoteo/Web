@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Item} from "../../models/item/item";
 import {Product} from "../../models/product/product";
-import {ProductService} from "../ProductService/product.service";
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   items: Item[] = [];
-  sum: number = 0;
-  constructor() { }
+  sum: number;
+  constructor() {
+    this.sum = 0;
+  }
 
-  getItems(){
-    return this.items;
+  getItemsObservable(){
+    return of(this.items);
   }
 
   addProduct(product: Product){
@@ -49,9 +51,5 @@ export class CartService {
     }
     this.sum -= product.unitPrice;
     product.unitsOnStock += 1;
-  }
-
-  getSum(){
-    return this.sum;
   }
 }

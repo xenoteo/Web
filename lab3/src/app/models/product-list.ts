@@ -1,3 +1,4 @@
+/*
 import {Bicycle} from "./bicycle/bicycle";
 import {Scooter} from "./scooter/scooter";
 
@@ -19,3 +20,5 @@ export const SCOOTERS: Scooter[] = [
   { name: "Scooter 2", unitsOnStock: 18, unitPrice: 166.64, imgSrc: "assets/img/scooter2.png", maxRange: 38, weight: 3.4},
   { name: "Scooter 3", unitsOnStock: 3, unitPrice: 215.25, imgSrc: "assets/img/scooter3.jpg", maxRange: 28, weight: 3.0}
 ]
+
+ */

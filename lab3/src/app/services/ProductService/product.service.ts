@@ -1,42 +1,33 @@
 import { Injectable } from '@angular/core';
 import {Product} from "../../models/product/product";
-import {BICYCLES} from "../../models/product-list"
-import {SCOOTERS} from "../../models/product-list"
-import {Bicycle} from "../../models/bicycle/bicycle";
-import {Scooter} from "../../models/scooter/scooter";
+import {FirestoreService} from "../FirestoreService/firestore.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  bicycles: Bicycle[] = BICYCLES;
-  scooters: Scooter[] = SCOOTERS;
   products: Product[] = [];
 
-  constructor() {
-    for(let bike of this.bicycles)
-      this.products.push(bike);
-    for(let scooter of this.scooters)
-      this.products.push(scooter);
+  constructor(private firestoreService: FirestoreService) {
+    this.firestoreService.getData().subscribe(data => {
+        this.products = data.map(e => {
+          return {
+            id: e.payload.doc.id, ...e.payload.doc.data()
+          } as Product;
+        })
+      }
+    );
   }
 
-  getProducts(){
-    return this.products;
+  getData(){
+    return this.firestoreService.getData();
   }
 
   addProduct(product: Product){
-    this.products.push(product);
+    this.firestoreService.createData(product);
   }
-  deleteProduct(product: Product){
-    if ((<Bicycle>product).description !== undefined){
-      let toDelete = <Bicycle>product;
-      let index = this.products.indexOf(toDelete);
-      this.products.splice(index, 1);
-    }
-    else{
-      let toDelete = <Scooter>product;
-      let index = this.products.indexOf(toDelete);
-      this.products.splice(index, 1);
-    }
+
+  deleteProduct(product){
+    this.firestoreService.deleteData(product);
   }
 }

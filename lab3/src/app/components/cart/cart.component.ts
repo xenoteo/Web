@@ -10,22 +10,27 @@ import {Product} from "../../models/product/product";
 })
 export class CartComponent implements OnInit {
   items: Item[];
-  sum: number;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) {
+  }
 
   ngOnInit(): void {
     this.setCart();
   }
 
-  setCart(){
-    this.items = this.cartService.getItems();
-    this.sum = Math.round(this.cartService.getSum() * 100) / 100;
+  setCart() {
+    this.cartService.getItemsObservable().subscribe(items => this.items = items);
   }
 
-  deleteProduct(product: Product){
+  getSum() {
+    let sum = 0;
+    for (let item of this.items) {
+      sum += item.product.unitPrice * item.number;
+    }
+    return Math.round(sum.valueOf() * 100) / 100;
+  }
+
+  deleteProduct(product: Product) {
     this.cartService.deleteProduct(product);
-    this.setCart();
   }
-
 }

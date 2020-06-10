@@ -1,0 +1,14 @@
+<div class="main-container container-fluid text-light mt-5">
+  <div class="user-container bg-secondary mt-5">
+    <h2 class="header">Sign up</h2>
+    <label class="mylabel" for="loginName">Email: </label>
+    <input class="mb-3 text-dark" type="text" id="loginName" value="your.email@gmail.com" [formControl]="email"/>
+    <br>
+    <label class="mylabel" for="loginPass">Password: </label>
+    <input class="text-dark" type="password" id="loginPass" value="1234" [formControl]="password"/>
+    <br>
+    <button class="mybtn btn btn-info" (click)="createUser()">Sign up</button>
+    <br>
+  </div>
+</div>
+

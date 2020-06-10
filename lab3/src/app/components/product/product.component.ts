@@ -11,11 +11,9 @@ import {ProductService} from "../../services/ProductService/product.service";
 
 export class ProductComponent implements OnInit {
   products: Product[];
-  isFormDisplayed: boolean = false;
-  isCartDisplayed: boolean = false;
 
   constructor(private productService: ProductService) {
-
+    this.setProducts();
   }
 
   ngOnInit(): void {
@@ -24,25 +22,17 @@ export class ProductComponent implements OnInit {
 
   deleteProduct(product: Product){
     this.productService.deleteProduct(product);
-    this.products = this.productService.getProducts();
-  }
-
-  addProduct(product: Product){
-    this.productService.addProduct(product);
-    this.products = this.productService.getProducts();
-    this.isFormDisplayed = false;
   }
 
   setProducts(){
-    this.products = this.productService.getProducts();
+    this.productService.getData().subscribe(data => {
+        this.products = data.map(e => {
+          return {
+            id: e.payload.doc.id, ...e.payload.doc.data()
+          } as Product;
+        })
+      });
   }
 
-  displayForm(){
-    this.isFormDisplayed = true;
-  }
-
-  changeCartDisplay(){
-    this.isCartDisplayed = !this.isCartDisplayed;
-  }
 }
 

@@ -14,8 +14,6 @@ export class NewProductComponent implements OnInit {
   isBike: boolean;
   checked: boolean = false;
 
-  @Output() notify = new EventEmitter<Product>();
-
   // params for product in general
   name = new FormControl('');
   unitsOnStock = new FormControl('');
@@ -32,7 +30,7 @@ export class NewProductComponent implements OnInit {
   maxRange = new FormControl('');
   weight = new FormControl('');
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
@@ -59,6 +57,8 @@ export class NewProductComponent implements OnInit {
     if (this.imgSrc.value == "") product.imgSrc = "assets/img/undefined.jpg";
     else product.imgSrc = this.imgSrc.value;
 
+    alert("New product has been added");
+
     return product;
   }
 
@@ -79,13 +79,15 @@ export class NewProductComponent implements OnInit {
     if (this.frameSize.value == "") bike.frameSize = 0;
     else bike.frameSize = parseInt(this.frameSize.value);
 
-    this.notify.emit(bike);
+    this.productService.addProduct(bike);
 
     this.clearProduct();
     this.type = new FormControl('');
     this.frameSize = new FormControl('');
     this.wheelDiameter = new FormControl('');
     this.description = new FormControl('');
+
+    this.checked = false;
   }
 
   submitScooter(){
@@ -96,11 +98,13 @@ export class NewProductComponent implements OnInit {
     if (this.weight.value == "") scooter.weight = 0;
     else scooter.weight = parseFloat(this.weight.value);
 
-    this.notify.emit(scooter);
+    this.productService.addProduct(scooter);
 
     this.clearProduct();
     this.maxRange = new FormControl('');
     this.weight = new FormControl('');
+
+    this.checked = false;
   }
 
 

@@ -1,3 +1,7 @@
 .input-label{
   width: 15vw;
 }
+
+.main-container {
+  max-width: 600px;
+}
