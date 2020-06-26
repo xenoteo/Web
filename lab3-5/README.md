@@ -4,8 +4,9 @@ Learning Angular on lab classes.
 ## Description
 This is the project of web application selling bicycles and scooters.  
 It is made step by step on lab classes. More detailed descriptions of the steps made you can find in readmes to the labs:
-- [lab3](https://github.com/xenoteo/Web/blob/master/lab3-4/lab3.md)
-- [lab4](https://github.com/xenoteo/Web/blob/master/lab3-4/lab4.md)
+- [lab3](https://github.com/xenoteo/Web/blob/master/lab3-5/lab3.md)
+- [lab4](https://github.com/xenoteo/Web/blob/master/lab3-5/lab4.md)
+- [lab5](https://github.com/xenoteo/Web/blob/master/lab3-5/lab5.md)
   
 The more precise readme to the whole application will be added after the project will finished.
 
