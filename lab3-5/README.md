@@ -12,7 +12,7 @@ This is the project of web application selling bicycles and scooters.
 - Removing products from the database (fot admins or users who added this product only)
 - Adding new products (for logined users only)
 
-## Tech used:
+### Tech used:
 - HTML
 - CSS
 - Bootstrap
@@ -20,7 +20,7 @@ This is the project of web application selling bicycles and scooters.
 - Angular
 - [Firebase](https://firebase.google.com/)
 
-### Screenshots
+## Screenshots
 ### Reader view
 <a href="https://imgur.com/2JTZtHc"><img src="https://i.imgur.com/2JTZtHc.png" title="source: imgur.com" /></a>
 ### Admin view
