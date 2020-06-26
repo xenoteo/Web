@@ -4,4 +4,5 @@ export class Product {
   unitsOnStock: number;
   unitPrice: number;
   imgSrc: string;
+  user: string;
 }

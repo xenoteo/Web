@@ -1,0 +1,24 @@
+<div class="main-container text-light bg-secondary">
+  <label class="input-label mt-3">Name:
+    <input type=text [formControl]="name" title="Enter filter name" class="text-dark">
+  </label>
+
+  <label class="input-label">Max price:
+    <input type=text [formControl]="maxPrice" title="Enter max price" class="text-dark">
+  </label>
+
+  <label class="input-label">Min price:
+    <input type=text [formControl]="minPrice" title="Enter min price" class="text-dark">
+  </label>
+
+  <label for="type" class="input-label">Type</label>
+  <select id="type" name="type" class="input-label text-dark mb-3">
+    <option (click)="setBoth()">Both </option>
+    <option (click)="setIsBike('bike')">Bicycle</option>
+    <option (click)="setIsBike('scooter')">Scooter</option>
+  </select>
+
+  <button class="btn btn-warning input-label mb-3 text-dark" (click)="submit()">Filter</button>
+  <button class="btn btn-dark input-label mb-5 text-light" (click)="reset()">Reset</button>
+</div>
+

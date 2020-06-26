@@ -52,4 +52,13 @@ export class CartService {
     this.sum -= product.unitPrice;
     product.unitsOnStock += 1;
   }
+
+  deleteItem(product: Product){
+    for (let item of this.items){
+      if (item.product == product){
+        let index = this.items.indexOf(item);
+        this.items.splice(index, 1);
+      }
+    }
+  }
 }

@@ -1,6 +1,13 @@
-<div class="main-container">
-  <div *ngFor="let product of products">
-    <app-product-info [product]="product" (notify)="deleteProduct($event)"></app-product-info>
+<div class="main-container row">
+  <div class="col-9">
+    <div *ngFor="let product of filtered">
+      <app-product-info [product]="product" (delete)="deleteProduct($event)">
+      </app-product-info>
+    </div>
+  </div>
+  <div class="col-2" >
+    <h3 class="float-right">Filter</h3>
+    <app-filter (notify)="setFilter($event)"></app-filter>
   </div>
 </div>
 

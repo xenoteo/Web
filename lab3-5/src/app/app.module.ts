@@ -19,6 +19,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CurrentUserComponent } from './components/current-user/current-user.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { CurrentUserComponent } from './components/current-user/current-user.com
     RegistrationComponent,
     LoginComponent,
     NavigationComponent,
-    CurrentUserComponent
+    CurrentUserComponent,
+    FilterComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

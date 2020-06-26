@@ -25,4 +25,5 @@ export class NavigationComponent implements OnInit {
   signOut(){
     this.authenticationService.signOut();
   }
+
 }

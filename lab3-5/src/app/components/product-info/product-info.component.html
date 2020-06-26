@@ -14,10 +14,10 @@
     </div>
     <div class="d-block buttons">
       <button class="btn btn-success item-btn" (click)="addProductToCart(bike)">Add to cart</button>
-      <button class="btn btn-danger item-btn" (click)="deleteProduct()">Remove</button>
+      <button class="btn btn-danger item-btn" (click)="deleteProduct()" *ngIf="canEdit()">Remove</button>
+      <button class="btn btn-info item-btn" *ngIf="canEdit()" (click)="editProduct()">Edit</button>
     </div>
 </div>
-
 <div *ngIf="!isBike" class="d-inline-flex product-wrapper" [ngClass]="getStyle(scooter)" >
   <div class="d-inline-flex">
     <img class="product-img" src={{scooter.imgSrc}}>
@@ -31,9 +31,16 @@
     <h6 class="product-number ml-1" [ngClass]="getTextColor(scooter)"> {{scooter.unitsOnStock}}</h6>
   </div>
   <div class="d-block buttons">
-    <button class="btn btn-success item-btn" (click)="addProductToCart(scooter)">Add to cart</button>
-    <button class="btn btn-danger item-btn" (click)="deleteProduct()">Remove</button>
+    <button class="btn btn-success item-btn mt-5" (click)="addProductToCart(scooter)">Add to cart</button>
+    <button class="btn btn-danger item-btn" *ngIf="canEdit()"  (click)="deleteProduct()">Remove</button>
+    <button class="btn btn-info item-btn" *ngIf="canEdit()" (click)="editProduct()">Edit</button>
   </div>
 </div>
+
+<div *ngIf="edit" [ngClass]="getEditStyle()">
+  <app-edit-product [product]="product"></app-edit-product>
+  <button class="btn btn-warning text-dark mt-3 mb-5 close-btn" (click)="close()">Close</button>
+</div>
+
 
 

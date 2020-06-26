@@ -30,4 +30,8 @@ export class ProductService {
   deleteProduct(product){
     this.firestoreService.deleteData(product);
   }
+
+  updateProduct(product){
+    this.firestoreService.updateData(product);
+  }
 }

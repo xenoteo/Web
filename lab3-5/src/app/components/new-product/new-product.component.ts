@@ -4,6 +4,7 @@ import {Bicycle} from "../../models/bicycle/bicycle";
 import {Product} from "../../models/product/product";
 import {ProductService} from "../../services/ProductService/product.service";
 import {Scooter} from "../../models/scooter/scooter";
+import {AuthenticationService} from "../../services/AuthenticationService/authentication.service";
 
 @Component({
   selector: 'app-new-product',
@@ -11,6 +12,8 @@ import {Scooter} from "../../models/scooter/scooter";
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
+  currentUser: string;
+
   isBike: boolean;
   checked: boolean = false;
 
@@ -30,9 +33,10 @@ export class NewProductComponent implements OnInit {
   maxRange = new FormControl('');
   weight = new FormControl('');
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.setCurrentUser();
   }
 
   check(s: string){
@@ -56,6 +60,9 @@ export class NewProductComponent implements OnInit {
 
     if (this.imgSrc.value == "") product.imgSrc = "assets/img/undefined.jpg";
     else product.imgSrc = this.imgSrc.value;
+
+    this.setCurrentUser();
+    product.user = this.currentUser;
 
     alert("New product has been added");
 
@@ -107,6 +114,13 @@ export class NewProductComponent implements OnInit {
     this.checked = false;
   }
 
+  private setCurrentUser(){
+    this.authenticationService.getState().subscribe(data => {
+      if (data != null)
+        this.currentUser = data.email
+      else this.currentUser = null;
+    });
+  }
 
 
 }

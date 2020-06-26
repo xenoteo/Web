@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {Router} from "@angular/router";
 import * as firebase from 'firebase';
+import {Observable, of} from "rxjs";
+import {User} from "../../models/user/user";
+import {map, switchMap, take} from "rxjs/operators";
+import {AngularFirestore} from "@angular/fire/firestore";
 
 
 @Injectable({
@@ -9,7 +13,9 @@ import * as firebase from 'firebase';
 })
 export class AuthenticationService {
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {
+  constructor(private afAuth: AngularFireAuth,
+              private router: Router,
+              private firestore: AngularFirestore) {
   }
 
   getState(){
@@ -41,9 +47,17 @@ export class AuthenticationService {
         console.log("Error occurred: ", error.message);
         alert("Something went wrong...");
       });
-  }
+    this.addUserToDB(email);
+    }
 
   signOut(){
     this.afAuth.signOut();
+  }
+
+  addUserToDB(email: string){
+    let user = new User();
+    user.email = email;
+    user.role = "editor";
+    this.firestore.collection('/users').add({...user});
   }
 }

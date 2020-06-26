@@ -1,33 +1,39 @@
 import {Injectable} from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import {Product} from "../../models/product/product";
+import {User} from "../../models/user/user";
+import {AngularFireDatabase} from "@angular/fire/database";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class FirestoreService{
-  private productPath = '/products';
+export class FirestoreService {
+  private productsPath = '/products';
   private productsReference: AngularFirestoreCollection<Product> = null;
 
-  constructor(private firestore: AngularFirestore){
-    this.productsReference = firestore.collection(this.productPath);
+  constructor(private firestore: AngularFirestore, private db: AngularFireDatabase) {
+    this.productsReference = firestore.collection(this.productsPath);
   }
 
-  getData(){
+  getData() {
     return this.productsReference.snapshotChanges();
   }
 
-  createData(product: Product){
+  getUsers() {
+    return this.firestore.collection('/users').snapshotChanges();
+  }
+
+  createData(product: Product) {
     return this.productsReference.add({...product});
   }
 
-  updateData(product: Product){
+  updateData(product: Product) {
     delete product.id;
     this.productsReference.doc(product.id).update(product);
   }
 
-  deleteData(product){
+  deleteData(product) {
     this.productsReference.doc(product.id).delete();
   }
 }
