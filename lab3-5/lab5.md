@@ -10,9 +10,9 @@ In this version of the project were added:
   
 ### Roles
 From now all users are being added to the database with their roles. There are two possible roles for users: admin or editor. Reader is a user who not signed up or not logined.
-- Admin can edit or delete any product and add new product.
-- Editor or signed up and logined user can edit or remove only his/her own products (the products which were added by this user). Editor can add new products. New signed up user is always editor by default. 
-- Reader or not logined user cannot edit, delete or add products. This user can only add products to the cart.
+- **Admin** can edit or delete any product and add new product.
+- **Editor** or signed up and logined user can edit or remove only his/her own products (the products which were added by this user). Editor can add new products. New signed up user is always editor by default. 
+- **Reader** or not logined user cannot edit, delete or add products. This user can only add products to the cart.
   
 ### New models description
 - [Filter](https://github.com/xenoteo/Web/blob/master/lab3-5/src/app/models/filter/filter.ts) is used for storing the filtering data.
