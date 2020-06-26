@@ -11,6 +11,10 @@ This is the project of web application selling bicycles and scooters.
 - Editing products (fot admins or users who added this product only)
 - Removing products from the database (fot admins or users who added this product only)
 - Adding new products (for logined users only)
+- Roles
+ - Admin can edit or delete any product and add new product
+ - Editor or signed up and logined user can edit or remove only his/her own products (the products which were added by this user). Editor can add new products. New signed up user is always editor by default.
+ - Reader or not logined user cannot edit, delete or add products. This user can only add products to the cart.
 
 ### Tech used:
 - HTML
